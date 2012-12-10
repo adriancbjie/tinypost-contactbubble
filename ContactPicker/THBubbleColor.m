@@ -10,6 +10,14 @@
 
 @implementation THBubbleColor
 
+- (void)dealloc{
+    [_gradientBottom release];
+    [_gradientTop release];
+    [_border release];
+    
+    [super dealloc];
+}
+
 - (id)initWithGradientTop:(UIColor *)gradientTop
            gradientBottom:(UIColor *)gradientBottom
                    border:(UIColor *)border {

@@ -21,11 +21,11 @@
 
 @interface THContactPickerView : UIView <UITextViewDelegate, THContactBubbleDelegate, UIScrollViewDelegate>
 
-@property (nonatomic, strong) THContactBubble *selectedContactBubble;
+@property (nonatomic, retain) THContactBubble *selectedContactBubble;
 @property (nonatomic, assign) IBOutlet id <THContactPickerDelegate> delegate;
 @property (nonatomic, assign) BOOL limitToOne;
 @property (nonatomic, assign) CGFloat viewPadding;
-@property (nonatomic, strong) UIFont *font;
+@property (nonatomic, retain) UIFont *font;
 
 - (void)addContact:(id)contact withName:(NSString *)name;
 - (void)removeContact:(id)contact;

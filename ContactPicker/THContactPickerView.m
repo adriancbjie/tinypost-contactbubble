@@ -13,15 +13,15 @@
     BOOL _shouldSelectTextView;
 }
 
-@property (nonatomic, strong) UIScrollView *scrollView;
-@property (nonatomic, strong) NSMutableDictionary *contacts;
-@property (nonatomic, strong) NSMutableArray *contactKeys; // an ordered set of the keys placed in the contacts dictionary
-@property (nonatomic, strong) UILabel *placeholderLabel;
+@property (nonatomic, retain) UIScrollView *scrollView;
+@property (nonatomic, retain) NSMutableDictionary *contacts;
+@property (nonatomic, retain) NSMutableArray *contactKeys; // an ordered set of the keys placed in the contacts dictionary
+@property (nonatomic, retain) UILabel *placeholderLabel;
 @property (nonatomic, assign) CGFloat lineHeight;
-@property (nonatomic, strong) UITextView *textView;
+@property (nonatomic, retain) UITextView *textView;
 
-@property (nonatomic, strong) THBubbleColor *bubbleColor;
-@property (nonatomic, strong) THBubbleColor *bubbleSelectedColor;
+@property (nonatomic, retain) THBubbleColor *bubbleColor;
+@property (nonatomic, retain) THBubbleColor *bubbleSelectedColor;
 
 @end
 
@@ -31,6 +31,19 @@
 #define kHorizontalPadding 2 // the amount of padding to the left and right of each contact bubble
 #define kVerticalPadding 4 // amount of padding above and below each contact bubble
 #define kTextViewMinWidth 130
+
+- (void)dealloc{
+    [_selectedContactBubble release];
+    [_font release];
+    
+    [_scrollView release];
+    [_contacts release];
+    [_contactKeys release];
+    [_placeholderLabel release];
+    [_textView release];
+    
+    [super dealloc];
+}
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];

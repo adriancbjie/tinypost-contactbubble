@@ -21,15 +21,15 @@
 
 @interface THContactBubble : UIView <UITextViewDelegate>
 
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) UILabel *label;
-@property (nonatomic, strong) UITextView *textView; // used to capture keyboard touches when view is selected
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) UILabel *label;
+@property (nonatomic, retain) UITextView *textView; // used to capture keyboard touches when view is selected
 @property (nonatomic, assign) BOOL isSelected;
 @property (nonatomic, assign) id <THContactBubbleDelegate>delegate;
-@property (nonatomic, strong) CAGradientLayer *gradientLayer;
+@property (nonatomic, retain) CAGradientLayer *gradientLayer;
 
-@property (nonatomic, strong) THBubbleColor *color;
-@property (nonatomic, strong) THBubbleColor *selectedColor;
+@property (nonatomic, retain) THBubbleColor *color;
+@property (nonatomic, retain) THBubbleColor *selectedColor;
 
 - (id)initWithName:(NSString *)name;
 - (id)initWithName:(NSString *)name

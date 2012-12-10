@@ -21,6 +21,17 @@
 #define kColorSelectedGradientBottom [UIColor colorWithRed:73.0/255.0 green:58.0/255.0 blue:242.0/255.0 alpha:1.0]
 #define kColorSelectedBorder [UIColor colorWithRed:56.0/255.0 green:0/255.0 blue:233.0/255.0 alpha:1.0]
 
+- (void)dealloc{
+    [_name release];
+    [_label release];
+    [_textView release];
+    [_gradientLayer release];
+    [_color release];
+    [_selectedColor release];
+    
+    [super dealloc];
+}
+
 - (id)initWithName:(NSString *)name {
     if ([self initWithName:name color:nil selectedColor:nil]) {
 

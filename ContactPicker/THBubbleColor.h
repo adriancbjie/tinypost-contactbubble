@@ -10,9 +10,9 @@
 
 @interface THBubbleColor : NSObject
 
-@property (nonatomic, strong) UIColor *gradientTop;
-@property (nonatomic, strong) UIColor *gradientBottom;
-@property (nonatomic, strong) UIColor *border;
+@property (nonatomic, retain) UIColor *gradientTop;
+@property (nonatomic, retain) UIColor *gradientBottom;
+@property (nonatomic, retain) UIColor *border;
 
 - (id)initWithGradientTop:(UIColor *)gradientTop
            gradientBottom:(UIColor *)gradientBottom

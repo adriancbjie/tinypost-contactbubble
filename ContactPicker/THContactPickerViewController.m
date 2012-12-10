@@ -16,6 +16,16 @@
 
 @implementation THContactPickerViewController
 
+- (void)dealloc{
+    [_contactPickerView release];
+    [_tableView release];
+    [_contacts release];
+    [_selectedContacts release];
+    [_filteredContacts release];
+    
+    [super dealloc];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
