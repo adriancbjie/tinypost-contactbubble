@@ -87,6 +87,7 @@
     self.textView.contentInset = UIEdgeInsetsMake(-11, -6, 0, 0);
     self.textView.scrollEnabled = NO;
     self.textView.scrollsToTop = NO;
+    self.textView.autocorrectionType = UITextAutocorrectionTypeNo;
     [self.textView becomeFirstResponder];
     
     // Add shadow to bottom border
