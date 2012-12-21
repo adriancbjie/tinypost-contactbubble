@@ -71,6 +71,7 @@
     self.label = [[UILabel alloc] init];
     self.label.backgroundColor = [UIColor clearColor];
     self.label.text = self.name;
+    self.label.font = [UIFont systemFontOfSize:15.f];
     [self addSubview:self.label];
     
     self.textView = [[UITextView alloc] init];
